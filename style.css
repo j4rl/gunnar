@@ -1,0 +1,32 @@
+:root{
+    --formborder:rgb(0,0,0,.3);
+    --formback:rgb(100,100,100,.2);
+    --formlabelcolor:rgb(150,150,150,.8)
+  }
+  form{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    width:40rem;
+    padding:.5rem;
+    background: var(--formback);
+    border-radius:.6rem;
+  }
+  input, select, textarea{
+    font:1.2rem system-ui;
+    padding: 0.3rem;
+    border:1px solid var(--formborder);
+    border-radius:.3rem;
+  }
+  label{
+    position:relative;
+    top:1.1rem;
+    left:.5rem;
+    font:.8rem system-ui;
+    color:var(--formlabelcolor);
+  }
+  button{
+    margin-top:1rem;
+    margin-bottom:.6rem;
+    padding:.5rem;
+  }
