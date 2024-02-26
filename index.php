@@ -1,4 +1,3 @@
-<?php $strLink=""; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <?php        
-        if(isset($_POST['btn'])){
-            $strLink="<a href='".$_POST['link']."'>".htmlentities($_POST['desc'])."</a><br>".$_POST['linx'];
-          } ?>
-        <a href='länk'></a>
             <form action="index.php" method="POST">
                 <label for="link">Skriv en URL</label>
                 <input type="text" name="link" id="link" placeholder="https://" required>
@@ -21,7 +15,6 @@
                 <input type="hidden" name="linx" value="<?=$strLink?>">
                 <button type="submit" name="btn" value="x">Lägg till länk</button>
             </form>
-          <?=$strLink?>
 
 </body>
 </html>
