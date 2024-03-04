@@ -1,3 +1,22 @@
+<?php 
+    $server="localhost";
+    $user="root";
+    $pass="";
+    $db="gunnar";
+    $conn=mysqli_connect($server,$user,$pass,$db);
+
+    if(isset($_POST["btn"])){
+        $url=$_POST['link'];
+        $desc=$_POST['desc'];
+        $sql="INSERT INTO `tbllinx`(`url`, `description`) VALUES ('$url','$desc')";
+        $result=mysqli_query($conn,$sql);
+        header("Location: index.php");
+    }else{
+        $sql="SELECT * FROM tblLinx";
+        $result=mysqli_query($conn,$sql);
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +34,11 @@
                 <input type="hidden" name="linx" value="<?=$strLink?>">
                 <button type="submit" name="btn" value="x">Lägg till länk</button>
             </form>
+            <?php
+                while($row=mysqli_fetch_assoc($result)){
+                    echo "<a href='".$row['url']."'>".$row['description']."</a><br>";
+                }
+            ?>
 
 </body>
 </html>
